@@ -23,7 +23,7 @@ class ProjectSeeder extends Seeder
         $technologies = Technology::all();
         $techIds = $technologies->pluck('id');
 
-        for ($i = 0; $i < 8; $i++) {
+        for ($i = 0; $i < 50; $i++) {
             $new_project = new Project();
             $new_project->description = $faker->paragraph(4);
             $new_project->title = $faker->words(4, true);
