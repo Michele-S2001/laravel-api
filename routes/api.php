@@ -21,3 +21,7 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 // api/projects INDEX
 Route::get('/projects', [ProjectController::class, 'index']);
+
+
+// api/projects/{slug} SHOW
+Route::get('/projects/{project:slug}', [ProjectController::class, 'show']);
