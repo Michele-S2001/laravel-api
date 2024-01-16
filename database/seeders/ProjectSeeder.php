@@ -8,6 +8,7 @@ use App\Models\Type;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
+use Illuminate\Support\Str;
 
 class ProjectSeeder extends Seeder
 {
@@ -27,6 +28,7 @@ class ProjectSeeder extends Seeder
             $new_project = new Project();
             $new_project->description = $faker->paragraph(4);
             $new_project->title = $faker->words(4, true);
+            $new_project->slug = Str::slug($new_project->title, '-');
             $new_project->type_id = $faker->randomElement($ids);
             $new_project->save();
 
