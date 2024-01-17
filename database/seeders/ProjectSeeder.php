@@ -26,7 +26,7 @@ class ProjectSeeder extends Seeder
 
         for ($i = 0; $i < 50; $i++) {
             $new_project = new Project();
-            $new_project->description = $faker->paragraph(4);
+            $new_project->description = join(" ", $faker->paragraphs(4));
             $new_project->title = $faker->words(4, true);
             $new_project->slug = Str::slug($new_project->title, '-');
             $new_project->type_id = $faker->randomElement($ids);
