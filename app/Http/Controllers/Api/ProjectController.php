@@ -11,7 +11,7 @@ class ProjectController extends Controller
     //Index method
     public function index() {
 
-        $results = Project::with('type')->paginate(12);
+        $results = Project::with('type')->orderBy('id', 'DESC')->paginate(12);
         return response()->json([
             'success' => true,
             'results' => $results
